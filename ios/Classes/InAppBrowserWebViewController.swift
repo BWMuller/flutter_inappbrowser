@@ -750,7 +750,8 @@ class InAppBrowserWebViewController: UIViewController, WKUIDelegate, WKNavigatio
     }
     
     func takeScreenshot (completionHandler: @escaping (_ screenshot: Data?) -> Void) {
-        if #available(iOS 11.0, *) {
+		//Commenting out due to compiling issues
+        /*if #available(iOS 11.0, *) {
             self.webView.takeSnapshot(with: nil, completionHandler: {(image, error) -> Void in
                 var imageData: Data? = nil
                 if let screenshot = image {
@@ -758,9 +759,9 @@ class InAppBrowserWebViewController: UIViewController, WKUIDelegate, WKNavigatio
                 }
                 completionHandler(imageData)
             })
-        } else {
+        } else {*/
             completionHandler(nil)
-        }
+        //}
     }
 
     func setOptions(newOptions: InAppBrowserOptions, newOptionsMap: [String: Any]) {
